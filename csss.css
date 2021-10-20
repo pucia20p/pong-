@@ -1,0 +1,130 @@
+:root{
+    --common: #0ff;
+    --uncommon: #f00;
+    --rare: #0f0;
+    --legendary: #ff0;
+}
+body{
+    background-color:#222;
+    margin: 20px;
+    color: white;
+    font-weight: 900;
+    font-family: Century Gothic;
+}
+
+.select, .przycisk, .inside1, .inside2{
+    cursor: pointer;
+}
+.money{
+    display: flex;
+    justify-content: center;
+}
+.money div{
+    width: 300px;
+    background-color: #555;
+    border-radius: 45px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.menu{
+    display: flex;
+    justify-content: center;
+}
+.select{
+    margin: 20px;
+    background-color: #555;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.bet{
+    display: flex;
+    justify-content: center;
+}
+.bet div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #888;
+    width: 300px;
+    height: 50px;
+    border-radius: 30px;
+}
+
+
+.przyciski{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap:wrap;
+}
+.przycisk{
+    margin: 10px;
+    display: flex;
+    width: 200px;
+    height: 60px;
+    border-radius: 45px;
+    align-items: center;
+    
+}
+.inside1{
+    display: flex;
+    border-radius: 45px;
+    background-color: black;
+    height: 60px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.inside2{
+    display: flex;
+    margin-left: 70px;
+    color: black;
+}
+
+#common{
+    color: var(--common);
+}
+#common2{
+    background-color: var(--common);
+}
+
+#uncommon{
+    color: var(--uncommon);
+}
+#uncommon2{
+    background-color: var(--uncommon);
+}
+
+#rare{
+    color: var(--rare);
+}
+#rare2{
+    background-color: var(--rare);
+}
+
+#legendary{
+    color: var(--legendary);
+}
+#legendary2{
+    background-color: var(--legendary);
+}
+
+
+.kolko{
+    display: flex;
+    justify-content: center;
+}
+.wskaznik div{
+    display: flex;
+    justify-content: center;
+    width: 10px;
+    height: 20px;
+    background-color: #00f;
+}

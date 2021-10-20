@@ -5,7 +5,7 @@ body{
 }
 #big{
     background: blue;
-    width: 800px;
+    width: 400px;
     height: 600px;
     position: relative;
     margin-left: 10px;
@@ -40,7 +40,8 @@ input{
     background-color: white;
 }
 #leftBox{
-
+    left: 0;
+    top: 200px;
 }
 #rightBox{
 
