@@ -57,15 +57,14 @@ body{
     display: flex;
     width: 150px;
     height: 60px;
-    border-radius: 45px;
-    align-items: center;
-    
+    border-radius: 30px;
+    align-items: center;   
 }
 .inside1{
-    border-radius: 45px;
+    border-radius: 28px;
     background-color: black;
     height: 60px;
-    width: 50px;
+    width: 60px;
     align-items: center;
 }
 .inside2{
@@ -100,11 +99,12 @@ body{
 }
 
 .kolko{
-    transform: rotate(45deg);
+    margin-bottom: 0;
 }
 
 .wskaznik div{
+    margin-top: 0;
     width: 2px;
     height: 20px;
-    background-color: #00f;
+    background-color: #fff;
 }
