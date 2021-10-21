@@ -15,25 +15,20 @@ body{
 .select, .przycisk, .inside1, .inside2{
     cursor: pointer;
 }
-.money{
+
+.money, .money div, .menu, .bet, .bet div, .inside1, .kolko, .wskaznik{
     display: flex;
     justify-content: center;
 }
+
 .money div{
     width: 300px;
     background-color: #555;
     border-radius: 45px;
     height: 50px;
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-
-.menu{
-    display: flex;
-    justify-content: center;
-}
 .select{
     margin: 20px;
     background-color: #555;
@@ -41,15 +36,8 @@ body{
     border-radius: 10px;
 }
 
-
-.bet{
-    display: flex;
-    justify-content: center;
-}
 .bet div{
-    display: flex;
     align-items: center;
-    justify-content: center;
     padding: 10px;
     background-color: #888;
     width: 300px;
@@ -67,24 +55,22 @@ body{
 .przycisk{
     margin: 10px;
     display: flex;
-    width: 200px;
+    width: 150px;
     height: 60px;
     border-radius: 45px;
     align-items: center;
     
 }
 .inside1{
-    display: flex;
     border-radius: 45px;
     background-color: black;
     height: 60px;
     width: 50px;
-    justify-content: center;
     align-items: center;
 }
 .inside2{
     display: flex;
-    margin-left: 70px;
+    margin-left: 30px;
     color: black;
 }
 
@@ -94,21 +80,18 @@ body{
 #common2{
     background-color: var(--common);
 }
-
 #uncommon{
     color: var(--uncommon);
 }
 #uncommon2{
     background-color: var(--uncommon);
 }
-
 #rare{
     color: var(--rare);
 }
 #rare2{
     background-color: var(--rare);
 }
-
 #legendary{
     color: var(--legendary);
 }
@@ -116,15 +99,12 @@ body{
     background-color: var(--legendary);
 }
 
-
 .kolko{
-    display: flex;
-    justify-content: center;
+    transform: rotate(45deg);
 }
+
 .wskaznik div{
-    display: flex;
-    justify-content: center;
-    width: 10px;
+    width: 2px;
     height: 20px;
     background-color: #00f;
 }
