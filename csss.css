@@ -54,11 +54,16 @@ body{
 }
 .przycisk{
     margin: 10px;
+    margin-top: 20px;
     display: flex;
     width: 150px;
     height: 60px;
     border-radius: 30px;
-    align-items: center;   
+    align-items: center;
+    transition-duration: 0.5s;  
+}
+.przycisk:hover{
+    margin-top: 0;
 }
 .inside1{
     border-radius: 28px;
@@ -97,6 +102,7 @@ body{
 #legendary2{
     background-color: var(--legendary);
 }
+
 
 .kolko{
     margin-bottom: 0;
