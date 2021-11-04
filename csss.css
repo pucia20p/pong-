@@ -12,7 +12,9 @@ body{
     font-family: Century Gothic;
 }
 
-.select, .przycisk, .inside1, .inside2{
+
+
+.select, .przycisk, .inside1, .inside2, .kolko{
     cursor: pointer;
 }
 
@@ -106,6 +108,7 @@ body{
 
 .kolko{
     margin-bottom: 0;
+    transition-duration: 7s;
 }
 
 .wskaznik div{
@@ -114,3 +117,6 @@ body{
     height: 20px;
     background-color: #fff;
 }
+
+
+
