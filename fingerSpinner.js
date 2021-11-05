@@ -163,3 +163,8 @@ function cheatCode(num){
     mons += parseInt(num);
     money.innerText = mons;
 }
+
+
+let x = Math.ceil(Math.random()*100)
+if(x == 69)
+    alert("nice")
