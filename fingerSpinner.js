@@ -85,6 +85,32 @@ let red = [ 9,10,11,12,13,14,21,22,23,24,25,32,33,34,35,36,54,55,56,57,58,59,66,
 let green = [ 1,2,3,43,44,45,46,47,48,88,89,90,91,92,93,133,134,135,136,137,138,223,224,225,226,227,268,269,270,271,272,273,313,314,315,316,317,358,359,360]
 let gold = [ 178,179,180,181,182,183]
 let wlacz = true
+
+function checkColor(color, losowanie){
+    for(i=0; i<blue.length; i++){
+        if(blue[i] == losowanie)
+            return 1
+    }
+    if(color == null){
+        for(i=0; i<red.length; i++){
+            if(red[i] == losowanie)
+                return 2
+        }   
+    }
+    if(color == null){
+        for(i=0; i<green.length; i++){
+            if(green[i] == losowanie)
+                return 3
+        }   
+    }
+    if(color == null){
+        for(i=0; i<gold.length; i++){
+            if(gold[i] == losowanie)
+                return 4
+        }   
+    }
+}
+
 kolko.addEventListener("click",function (){
     if(wlacz){
         wlacz = false
@@ -94,31 +120,32 @@ kolko.addEventListener("click",function (){
         kolko.style.transitionDuration = "5s" 
         kolko.style.transform = `rotate(${wyn}deg)`;
         setTimeout(function(){
-            
-            for(i=0; i<blue.length; i++){
-                if(blue[i] == losowanie)
-                    color = 1
-            }
-            if(color == null){
-                for(i=0; i<red.length; i++){
-                    if(red[i] == losowanie)
-                        color = 2
-                }   
-            }
-            if(color == null){
-                for(i=0; i<green.length; i++){
-                    if(green[i] == losowanie)
-                        color = 3
-                }   
-            }
-            if(color == null){
-                for(i=0; i<gold.length; i++){
-                    if(gold[i] == losowanie)
-                        color = 4
-                }   
-            }
+            color = checkColor(color, losowanie);
             console.log(color)
-            
+
+            switch(color){
+                case 1:
+                    mons +=  2*betMons[0]
+                    break;
+                case 2:
+                    mons +=  3*betMons[1]
+                    break;
+                case 3:
+                    mons +=  5*betMons[2]
+                    break;
+                case 4:
+                    mons +=  50*betMons[3]
+                    break;
+                default:
+                    console.log("wtf")
+            }
+            money.innerText = mons;
+            for(let i = 0; i < 4; i++){
+                betMons[i] = 0;
+                przycisk[i].querySelector(".inside2").innerText = "";
+            }
+
+
         },6000)
         setTimeout(function(){
             kolko.style.transitionDuration = "1s"
@@ -132,4 +159,7 @@ kolko.addEventListener("click",function (){
     }
 })
 
-
+function cheatCode(num){
+    mons += parseInt(num);
+    money.innerText = mons;
+}
