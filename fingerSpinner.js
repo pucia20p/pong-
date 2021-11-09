@@ -11,8 +11,23 @@ for(i=0; i<4; i++){
 }
 const kolko = document.querySelector(".kolko");
 
-let mons = 1000;
+if(localStorage.getItem("mons") == null){
+    localStorage.setItem("mons", 1000)    
+}
+let mons = localStorage.getItem("mons")
+
+console.log(localStorage.getItem("mons"))
+
 money.innerText = mons;
+
+let tabelka = document.querySelector(".tabelka table")
+
+if(localStorage.getItem("username") == null)
+    localStorage.setItem("username", " ")
+
+if(localStorage.getItem("tabelka") != null)
+    tabelka.innerHTML = localStorage.getItem("tabelka")
+
 
 function addMons(wololo){
     
@@ -126,15 +141,31 @@ kolko.addEventListener("click",function (){
             switch(color){
                 case 1:
                     mons +=  2*betMons[0]
+                    if(betMons[0] > 0)
+                        alert(`wygrałeś ${betMons[0]*2}`)
+                    else 
+                        alert("sadg")
                     break;
                 case 2:
                     mons +=  3*betMons[1]
+                    if(betMons[1] > 0)
+                        alert(`wygrałeś ${betMons[1]*3}`)
+                    else 
+                        alert("sadg")
                     break;
                 case 3:
                     mons +=  5*betMons[2]
+                    if(betMons[2] > 0)
+                        alert(`wygrałeś ${betMons[2]*5}`)
+                    else 
+                        alert("sadg")
                     break;
                 case 4:
                     mons +=  50*betMons[3]
+                    if(betMons[3] > 0)
+                        alert(`wygrałeś ${betMons[3]*50}`)
+                    else 
+                        alert("sadg")
                     break;
                 default:
                     console.log("wtf")
@@ -165,6 +196,21 @@ function cheatCode(num){
 }
 
 
+document.querySelector(".submit").addEventListener("click",function (){
+    let temp = prompt("Użytkownik?", localStorage.getItem("username"))
+    localStorage.setItem("username", temp)
+    tabelka.innerHTML += `<tr><td>${temp}</td><td>${mons}</td></tr>`
+    localStorage.setItem("tabelka", tabelka.innerHTML)
+    localStorage.setItem("mons", mons)
+})
+
+
+
+
+
 let x = Math.ceil(Math.random()*100)
 if(x == 69)
     alert("nice")
+
+
+//to do tableka w localstorage
