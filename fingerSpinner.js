@@ -1,19 +1,82 @@
 const okienko = document.querySelector(".komunikat");
 const okienkoText = document.querySelector("#txt");
 const okienkoButt = document.querySelector(".button div");
+let okienkoWlacz = false;
+let okienkoMemory;
 
 okienko.style.display = "none";
 okienkoText.innerText = " ";
 
+
 function alertAleFajny(teksty){
-    okienkoText.innerText = teksty;
-    okienko.style.display = "flex";
+    if(!okienkoWlacz){
+        okienkoText.innerText = teksty;
+        okienko.style.display = "flex";
+        okienkoWlacz = true;
+    } 
+    else {
+        okienkoMemory = teksty;
+    }
 }
 
 okienkoButt.addEventListener("click", function(){
     okienko.style.display = "none";
     okienkoText.innerText = " ";
+    okienkoWlacz = false;
+    if(okienkoMemory != null){
+        setTimeout(function(){
+            alertAleFajny(okienkoMemory);
+            okienkoMemory = null;
+        }, 500);
+    }
 })
+
+
+const historia = document.querySelector(".historia");
+let historiaIn = new Array();
+for(i=0; i<5; i++){
+    historiaIn[i] = document.querySelectorAll(".historiaIn")[i];
+}
+let historiaIn2 = [0, 0, 0, 0, 0];
+
+function updateHistoria(num){
+    switch(historiaIn2[num]){
+        case 0:
+            break;
+        case 1:
+            historiaIn[num].style.backgroundColor = "var(--common)";
+            break;
+        case 2:
+            historiaIn[num].style.backgroundColor = "var(--uncommon)";
+            break;
+        case 3:
+            historiaIn[num].style.backgroundColor = "var(--rare)";
+            break;
+        case 4:
+            historiaIn[num].style.backgroundColor = "var(--legendary)";
+            break;
+        default:
+            console.log("wtf");
+    }
+    if(historiaIn2[num]!=0)
+        historiaIn[num].style.display = "block";
+    else
+        historiaIn[num].style.display = "none";
+}
+
+function dodajDoHistori(kolor){
+    historiaIn2[4] = historiaIn2[3];
+    updateHistoria(4);
+    historiaIn2[3] = historiaIn2[2];
+    updateHistoria(3);
+    historiaIn2[2] = historiaIn2[1];
+    updateHistoria(2);
+    historiaIn2[1] = historiaIn2[0];
+    updateHistoria(1);
+    historiaIn2[0] = kolor;
+    updateHistoria(0);
+}
+dodajDoHistori(0);
 
 const money = document.querySelector(".money div");
 
@@ -150,6 +213,7 @@ kolko.addEventListener("click",function (){
         setTimeout(function(){
             color = checkColor(color, losowanie);
             console.log(color)
+            dodajDoHistori(color);
 
             switch(color){
                 case 1:
@@ -200,17 +264,27 @@ kolko.addEventListener("click",function (){
     }
 })
 
-
+let resete = false;
 document.querySelector(".reset").addEventListener("click", function(){
-    cheatCodeAlt(1000);
+    if(resete){
+        cheatCodeAlt(1000);
+        resete = false;
+    }
+    else{
+        alertAleFajny("Spróbuj jeszcze raz aby potwierdzić; odśwież stronę aby anulować");
+        resete = true;
+    }
 })
 
 
 
+document.querySelector(".tutoriel").addEventListener("click", function(){
+    alertAleFajny(`1. Wprowadź ilość którą chcesz postawić.
+2. Wybierz kolor który chcesz obstawić (można wybierać kilkukrotnie).
+3. Naciśnij na koło i powodzenia!`)
+});
 
 
-
-// komunikaty
 
 
 
@@ -222,5 +296,7 @@ if(x == 69)
 let y = Math.ceil(Math.random()*10000)
 if(x == 2137)
     alertAleFajny("ej fajna ta żółta twarz")
+
+
 
 
