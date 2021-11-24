@@ -10,15 +10,16 @@ body{
     color: white;
     font-weight: 900;
     font-family: Century Gothic;
+    overflow-x:hidden;
 }
 
 
 
-.select, .przycisk, .inside1, .inside2, .kolko, .reset{
+.select, .przycisk, .inside1, .inside2, .kolko, .reset, .button div{
     cursor: pointer;
 }
 
-.money, .money div, .menu, .bet, .bet div, .inside1, .kolko, .wskaznik, .tabelka, .reset{
+.money, .money div, .menu, .bet, .bet div, .inside1, .kolko, .wskaznik, .tabelka, .reset, #txt{
     display: flex;
     justify-content: center;
 }
@@ -144,9 +145,9 @@ body{
 }
 .komuikat{
     margin: 0;
-    display: flex;
+    display: none;
     justify-content: center;
-    align-items: center;
+    align-content: space-around;
 }
 .popapa{
     background-color: rgba(122,122,122,0.5);
@@ -155,6 +156,35 @@ body{
     position:absolute;
     display: flex;
     justify-content: center;
-    align-items: center;
     z-index: 1;
 }
+.komunikator{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    flex-direction: column;
+    width: 70%;
+    border-radius: 35px;
+    top: 45%;
+}
+
+#txt{
+    margin: 20px 20px;
+    margin-top: 40px;
+}
+.button{
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.button div{
+    background-color: wheat;
+    border-radius: 35px;
+    color: black;
+    margin: 1% 0;
+    padding: 5px;
+}
+

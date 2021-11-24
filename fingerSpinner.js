@@ -1,3 +1,20 @@
+const okienko = document.querySelector(".komunikat");
+const okienkoText = document.querySelector("#txt");
+const okienkoButt = document.querySelector(".button div");
+
+okienko.style.display = "none";
+okienkoText.innerText = " ";
+
+function alertAleFajny(teksty){
+    okienkoText.innerText = teksty;
+    okienko.style.display = "flex";
+}
+
+okienkoButt.addEventListener("click", function(){
+    okienko.style.display = "none";
+    okienkoText.innerText = " ";
+})
+
 const money = document.querySelector(".money div");
 
 let select = new Array();
@@ -70,26 +87,23 @@ function obstaw(wololo){
         betMons[wololo] += better;
         cheatCode(better*-1);
         przycisk[wololo].querySelector(".inside2").innerText = betMons[wololo];
+        wlacz = true;
     } else
-        alert("podaj poprawną liczbę!")
+        alertAleFajny("podaj poprawną liczbę!")
     
 }
 let wlacz = false;
 przycisk[0].addEventListener("click",function(){
     obstaw(0);
-    wlacz = true;
 })
 przycisk[1].addEventListener("click",function(){
     obstaw(1);
-    wlacz = true;
 })
 przycisk[2].addEventListener("click",function(){
     obstaw(2);
-    wlacz = true;
 })
 przycisk[3].addEventListener("click",function(){
     obstaw(3);
-    wlacz = true;
 })
 
 
@@ -141,30 +155,30 @@ kolko.addEventListener("click",function (){
                 case 1:
                     cheatCode(2*betMons[0]);
                     if(betMons[0] > 0)
-                        alert(`wygrałeś ${betMons[0]*2}`)
+                        alertAleFajny(`wygrałeś ${betMons[0]*2}`)
                     else 
-                        alert("sadg")
+                        alertAleFajny("sadg")
                     break;
                 case 2:
                     cheatCode(3*betMons[1])
                     if(betMons[1] > 0)
-                        alert(`wygrałeś ${betMons[1]*3}`)
+                        alertAleFajny(`wygrałeś ${betMons[1]*3}`)
                     else 
-                        alert("sadg")
+                        alertAleFajny("sadg")
                     break;
                 case 3:
                     cheatCode(5*betMons[2])
                     if(betMons[2] > 0)
-                        alert(`wygrałeś ${betMons[2]*5}`)
+                        alertAleFajny(`wygrałeś ${betMons[2]*5}`)
                     else 
-                        alert("sadg")
+                        alertAleFajny("sadg")
                     break;
                 case 4:
                     cheatCode(50*betMons[3])
                     if(betMons[3] > 0)
-                        alert(`wygrałeś ${betMons[3]*50}`)
+                        alertAleFajny(`wygrałeś ${betMons[3]*50}`)
                     else 
-                        alert("sadg")
+                        alertAleFajny("sadg")
                     break;
                 default:
                     console.log("wtf")
@@ -193,8 +207,20 @@ document.querySelector(".reset").addEventListener("click", function(){
 
 
 
+
+
+
+// komunikaty
+
+
+
+
+
 let x = Math.ceil(Math.random()*100)
 if(x == 69)
-    alert("nice")
+    alertAleFajny("nice")
+let y = Math.ceil(Math.random()*10000)
+if(x == 2137)
+    alertAleFajny("ej fajna ta żółta twarz")
 
 
