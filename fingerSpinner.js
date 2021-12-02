@@ -31,6 +31,7 @@ okienkoButt.addEventListener("click", function(){
     }
 })
 
+
 //historia
 const historia = document.querySelector(".historia");
 let historiaIn = new Array();
